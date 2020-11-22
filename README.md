@@ -6,6 +6,7 @@ luci-app-apfree_wifidog是apfree wifidog的luci配置页面
 luci-app-apfree_wifidog依赖于apfree-wifidog (注意两个名称一个中杠，一个下划杠)
 
 1.如果你用的是openwrt或者LEDE 19.07以上版本的，官方已经收录apfree-wifidog，使用git clone https://github.com/ai2online/luci-app-apfree_wifidog.git 到packages，当然你也可以手动下载放入
+
 2.如果用的是其他版本的openwrt，请自行解决apfree-wifidog的编译和依赖，然后把本项目git clone或手动放到packages文件夹
 
 ## ### 编译配置
