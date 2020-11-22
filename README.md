@@ -32,6 +32,7 @@ git clone https://github.com/ai2online/luci-app-apfree_wifidog.git
 
 make menuconfig
 
+如果你遇到了因 cbi.lua 缺失造成的崩溃，请尝试安装 luci-compat 软件包。
 
 
 ## 联系我们
