@@ -9,6 +9,7 @@ luci-app-apfree_wifidog依赖于apfree-wifidog (注意两个名称一个中杠�
 
 2.如果用的是其他版本的openwrt，请自行解决apfree-wifidog的编译和依赖，然后把本项目git clone或手动放到package文件夹
 
+3.如果你是使用19.07以上 sdk单独编译放给安装，可以选择删去Makefile里的+apfree-wifidog  编译出ipk后，使用官方源安装apfree-wifidog后安装该luci-app,更方便
 ## ### 编译配置
 
 ```
