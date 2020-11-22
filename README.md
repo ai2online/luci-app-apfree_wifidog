@@ -14,7 +14,6 @@ git clone git clone https://github.com/ai2online/luci-app-apfree_wifidog.git
 
 make menuconfig
 
-## ### 编译配置
 luci->application->luci-app-apfree_wifidog
 
 
@@ -25,6 +24,13 @@ make V=s
 2.如果用的是其他版本的openwrt，请自行解决apfree-wifidog的编译和依赖，然后把本项目git clone或手动放到package文件夹
 
 3.如果你是使用19.07以上 sdk单独编译放给安装，可以选择删去Makefile里的+apfree-wifidog  编译出ipk后，使用官方源安装apfree-wifidog后安装该luci-app,更方便
+
+4.额外的（如果使用LEDE 最新的也是19.04了）
+cd lede/package/lean/  
+
+git clone https://github.com/ai2online/luci-app-apfree_wifidog.git  
+
+make menuconfig
 
 
 
