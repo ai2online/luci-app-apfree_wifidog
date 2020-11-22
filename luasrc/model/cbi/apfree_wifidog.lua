@@ -4,7 +4,7 @@
 local sys = require "luci.sys"
 local opkg = require "luci.model.ipkg"
 
-local packageName = "wifidog"
+local packageName = "wifidogx"
 local m, s, o
 
 local function get_status()
@@ -28,10 +28,13 @@ local descr = [[
 	<a target="_blank" class="github-button" href="https://github.com/liudf0716/apfree_wifidog/subscription" data-icon="octicon-eye" data-style="mega" data-count-href="/liudf0716/apfree_wifidog/watchers" data-count-api="/repos/liudf0716/apfree_wifidog#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch liudf0716/apfree_wifidog on GitHub">Watch</a>
 	<a target="_blank" class="github-button" href="https://github.com/liudf0716/apfree_wifidog" data-icon="octicon-star" data-style="mega" data-count-href="/liudf0716/apfree_wifidog/stargazers" data-count-api="/repos/liudf0716/apfree_wifidog#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star liudf0716/apfree_wifidog on GitHub">Star</a>
 	<a target="_blank" class="github-button" href="https://github.com/liudf0716/apfree_wifidog/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/liudf0716/apfree_wifidog/network" data-count-api="/repos/liudf0716/apfree_wifidog#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork liudf0716/apfree_wifidog on GitHub">Fork</a>
+	<a target="_blank" class="github-button" href="https://github.com/ai2online/luci-app-apfree_wifidog/subscription" data-icon="octicon-eye" data-style="mega" data-count-href="/ai2online/luci-app-apfree_wifidog/watchers" data-count-api="/repos/ai2online/luci-app-apfree_wifidog#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch ai2online/luci-app-apfree_wifidog on GitHub">Watch</a>
+	<a target="_blank" class="github-button" href="https://github.com/ai2online/luci-app-apfree_wifidog" data-icon="octicon-star" data-style="mega" data-count-href="/ai2online/luci-app-apfree_wifidog/stargazers" data-count-api="/repos/ai2online/luci-app-apfree_wifidog#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star ai2online/luci-app-apfree_wifidog on GitHub">Star</a>
+	<a target="_blank" class="github-button" href="https://github.com/ai2online/luci-app-apfree_wifidog/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/ai2online/luci-app-apfree_wifidog/network" data-count-api="/repos/ai2online/luci-app-apfree_wifidog#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork ai2online/luci-app-apfree_wifidog on GitHub">Fork</a>
 </p>
 ]]
 
-m = Map("wifidog", translate("<img src=\"/luci-static/resources/icons/apfreeWifiDog.png\" alt=\"\" />ApFree WifiDog"), translate(descr))
+m = Map("wifidogx", translate("<img src=\"/luci-static/resources/icons/apfreeWifiDog.png\" alt=\"\" />ApFree WifiDog"), translate(descr))
 
 s = m:section(TypedSection, "wifidog", translate("运行状态"), get_status())
 s.anonymous = true
@@ -45,8 +48,8 @@ s:tab("policy", translate("访问控制"))
 s:tab("advanced", translate("高级设置"))
 
 -- 基本设置
-Enable = s:taboption("general", Flag, "enable", translate("启用"),translate("打开或关闭认证"))
-Enable.rmempty = false
+Enable = s:taboption("general", Flag, "disabled", translate("启用"),translate("打开或关闭认证"))
+Enable.rmempty = true
 Enable.default = "1"
 
 GatewayID = s:taboption("general",Value, "gateway_id", translate("设备 ID"), translate("默认为设备MAC地址"))
