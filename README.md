@@ -1,14 +1,21 @@
 luci-app-apfree_wifidog是apfree wifidog的luci配置页面
-但是存在许多问题，我已经修复
+
+但是存在许多问题，我已经修复一些
+
+
 修复读写配置
 
 
-添加在[保存配置并应用配置后]判断自己是否启动
+添加在按下[保存配置并应用配置]后判断自己是否启动，如果开关勾上，就会启动
 
 目前存在问题：状态不能显示（原代码判断状态这样写应该没错，我也觉得应该这样写，但还是显示未运行，但是实际是启动了，终端ps也能查到进程）
 
+剩下的问题主要出现在程序apfree-wifidog上了，比如状态插叙，执行wifidogx wdctl会提示Could not open configuration file '/etc/wifidog.conf', exiting. . .
 
-目前不影响使用了
+实际上在官方收录的apfree-wifidog的配置文件是/etc/config/wifidogx
+
+
+### 尽管存在一些问题，但是目前不影响使用了
 
 将其加入到LEDE&OpenWrt可以这样做：
 
