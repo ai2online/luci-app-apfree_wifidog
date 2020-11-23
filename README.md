@@ -32,12 +32,17 @@ git clone https://github.com/ai2online/luci-app-apfree_wifidog.git
 
 make menuconfig
 
-### 特别提示#####################
+############### 特别提示 ####################
+
 如果进网页出现 no file xxx
+
 通常在19.07以上都会出现，因为模块luci.model.ipkg不在默认存在，需要额外安装支持
+
 opkg update
+
 opkg install luci-lib-ipkg
-#################################
+
+################################################
 
 
 如果你遇到了因其他 cbi.lua 缺失造成的崩溃，请尝试安装 luci-compat 软件包。
