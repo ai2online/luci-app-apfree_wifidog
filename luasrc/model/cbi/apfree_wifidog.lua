@@ -50,7 +50,7 @@ s:tab("advanced", translate("高级设置"))
 -- 基本设置
 Enable = s:taboption("general", Flag, "disabled", translate("启用"),translate("打开或关闭认证"))
 Enable.rmempty = true
-Enable.default = "1"
+Enable.default = "0"
 
 GatewayID = s:taboption("general",Value, "gateway_id", translate("设备 ID"), translate("默认为设备MAC地址"))
 GatewayID.placeholder = luci.util.exec("ifconfig br-lan| grep HWaddr | awk -F \" \" '{print $5}' | awk '$1~//{print;exit}' | sed 's/://g'")
@@ -108,4 +108,8 @@ s:taboption("policy", Value, "untrusted_maclist", translate("MAC黑名单"), tra
 
 m:section(SimpleSection).template = "apfree_wifidog/client_list"
 
+local apply=luci.http.formvalue("cbi.apply")
+if apply then
+    io.popen("/etc/init.d/wifidogx restart")
+end
 return m
